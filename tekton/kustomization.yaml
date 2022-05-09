@@ -1,0 +1,8 @@
+resources:
+  - tekton-pipeline.yaml
+  - tekton-dashboard.yaml
+  - hello-world.yaml
+  - hello-world-run.yaml
+  - goodbye-world.yaml
+  - hello-goodbye-pipeline.yaml
+  - hello-goodbye-pipeline-run.yaml
