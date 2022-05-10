@@ -61,7 +61,7 @@ pod 状态 Running为正常
 kubectl get pods -n harbor -w
 ```
 ### 7.验证
-浏览器访问https://harbor.chenjie.info(之前配置的域名，如果不是真实域名需本地host解析静态ip）
+浏览器访问https://harbor.chenjie.info (之前配置的域名，如果不是真实域名需本地host解析静态ip）
 
 账号：admin
 
