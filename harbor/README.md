@@ -56,6 +56,20 @@ cd harbor
 kubectl create ns harbor
 helm install -n harbor harbor-helm .
 ```
+安装后输出：
+```
+NAME: harbor-helm
+LAST DEPLOYED: Tue May 10 10:17:41 2022
+NAMESPACE: harbor
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+Please wait for several minutes for Harbor deployment to complete.
+Then you should be able to visit the Harbor portal at https://harbor.chenjie.info
+For more details, please visit https://github.com/goharbor/harbor
+```
+
 pod 状态 Running为正常
 ```
 kubectl get pods -n harbor -w
