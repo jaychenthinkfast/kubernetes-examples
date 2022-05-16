@@ -35,7 +35,7 @@ helm fetch harbor/harbor --untar
 ```
 cd harbor
 ```
-### 4.修改value.yaml
+### 4.修改values.yaml
 建议使用ingress暴露域名
 
 需修改host为你使用的实际域名，修改className为你实际使用的IngressController
@@ -49,7 +49,23 @@ cd harbor
   externalURL: https://harbor.chenjie.info
 ```
 ### 5.替换域名证书(可选)
-如果有申请权威证书可在cert目录下的证书文件或者后期修改相应的secret
+如果有权威域名证书可以先生成secret例如
+```
+kubectl create secret tls chenjie-ssl \
+--cert=cert/tls.crt \
+--key=cert/tls.key \
+-n harbor
+```
+然后修改values.yaml,修改certSource为secret，修改secretName、notarySecretName
+```yaml
+expose:
+  type: ingress
+  tls:
+    certSource: secret
+    secret:
+      secretName: "chenjie-ssl"
+      notarySecretName: "chenjie-ssl"
+```
 
 ### 6.安装
 ```
